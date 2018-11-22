@@ -9,7 +9,7 @@ $borrarImg = $funciones->antihack_mysqli(isset($_GET["borrarImg"]) ? $_GET["borr
 $sliders->set("cod", $cod);
 $slide = $sliders->view();
 $imagenes->set("cod", $slide["cod"]);
-$imagenes->set("link", "modificarSliders");
+$imagenes->set("link", "sliders&accion=modificar");
 
 
 $categorias = new Clases\Categorias();
@@ -54,7 +54,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }

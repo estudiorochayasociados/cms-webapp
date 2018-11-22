@@ -9,7 +9,7 @@ $borrarImg = $funciones->antihack_mysqli(isset($_GET["borrarImg"]) ? $_GET["borr
 $portfolio->set("cod", $cod);
 $portfolioInd = $portfolio->view();
 $imagenes->set("cod", $portfolioInd["cod"]);
-$imagenes->set("link", "modificarPortfolio");
+$imagenes->set("link", "portfolio&accion=modificar");
 
 $categorias = new Clases\Categorias();
 $data = $categorias->list(array("area = 'portfolio'"));
@@ -56,7 +56,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }
@@ -136,7 +136,7 @@ if (isset($_POST["agregar"])) {
         </div>
         <br/>
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" name="agregar" value="Crear Novedad" />
+            <input type="submit" class="btn btn-primary" name="agregar" value="Modificar" />
         </div>
     </form>
 </div>

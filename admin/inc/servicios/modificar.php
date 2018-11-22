@@ -9,7 +9,7 @@ $borrarImg = $funciones->antihack_mysqli(isset($_GET["borrarImg"]) ? $_GET["borr
 $servicios->set("cod", $cod);
 $serviciosInd = $servicios->view();
 $imagenes->set("cod", $serviciosInd["cod"]);
-$imagenes->set("link", "modificarServicios");
+$imagenes->set("link", "servicios&accion=modificar");
 
 $categorias = new Clases\Categorias();
 $data = $categorias->list(array("area = 'servicios'"));
@@ -56,7 +56,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }
@@ -119,7 +119,7 @@ $imagenes->imagenesAdmin();
         <div class="clearfix"></div>
         <br/>
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" name="agregar" value="Modificar Servicios" />
+            <input type="submit" class="btn btn-primary" name="agregar" value="Guardar" />
         </div>
     </form>
 </div>

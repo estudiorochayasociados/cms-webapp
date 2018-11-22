@@ -6,7 +6,7 @@ class autoload
     public static function runSitio()
     {
         session_start();
-        define('URL', "http://localhost/sitio-novedades");
+        define('URL', "http://".$_SERVER['HTTP_HOST']."/cms-web");
         spl_autoload_register(
             function ($clase) {
                 $ruta = str_replace("\\", "/", $clase) . ".php";
@@ -18,7 +18,7 @@ class autoload
     public static function runAdmin()
     {
         session_start();
-        define('URL', "http://localhost/sitio-novedades/admin");
+        define('URL', "http://".$_SERVER['HTTP_HOST']."/cms-web/admin");
         require_once "../Clases/Zebra_Image.php";
         spl_autoload_register(
             function ($clase) {

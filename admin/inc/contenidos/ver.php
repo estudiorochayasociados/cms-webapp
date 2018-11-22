@@ -25,7 +25,7 @@ $contenidos = new Clases\Contenidos();
                 if (is_array($data)) {
                     for ($i = 0; $i < count($data); $i++) {
                         echo "<tr>";
-                        echo "<td>" . strtoupper($data[$i]["codigo"]) . "</td>";
+                        echo "<td>" . strtoupper($data[$i]["cod"]) . "</td>";
                         echo "<td>";
                         echo '<a class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Modificar" href="' . URL . '/index.php?op=contenidos&accion=modificar&cod=' . $data[$i]["id"] . '">
                         <i class="fa fa-cog"></i></a>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2018 a las 14:37:44
+-- Tiempo de generación: 22-11-2018 a las 15:07:08
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -54,6 +54,13 @@ CREATE TABLE `categorias` (
   `area` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id`, `cod`, `titulo`, `area`) VALUES
+(1, '45df92d0f2', 'ASFASFA', 'novedades');
+
 -- --------------------------------------------------------
 
 --
@@ -63,14 +70,14 @@ CREATE TABLE `categorias` (
 CREATE TABLE `contenidos` (
   `id` int(11) NOT NULL,
   `contenido` longtext,
-  `codigo` varchar(255) NOT NULL
+  `cod` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `contenidos`
 --
 
-INSERT INTO `contenidos` (`id`, `contenido`, `codigo`) VALUES
+INSERT INTO `contenidos` (`id`, `contenido`, `cod`) VALUES
 (4, '<div class=\"btgrid\">\r\n<div class=\"row row-1\">\r\n<div class=\"col col-md-4\">\r\n<div class=\"content\">\r\n<p style=\"text-align:center\"><img alt=\"ENVIO\" src=\"http://delagro.com.ar/archivos/image/52d220e.png\" style=\"width:20%\" /></p>\r\n\r\n<h3 style=\"text-align:center\">ENV&Iacute;O A CONVENIR CON EL CLIENTE<br />\r\n<strong>ENVIAMOS A TODA LA ARGENTINA</strong></h3>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col col-md-4\">\r\n<div class=\"content\">\r\n<h3 style=\"text-align:center\"><img alt=\"PAGOS\" src=\"http://delagro.com.ar/archivos/image/74f54eb.png\" style=\"width:20%\" /></h3>\r\n\r\n<h3 style=\"text-align:center\">SEGUINOS EN LAS REDES<br />\r\n<strong>INGRES&Aacute; A NUESTRO FACEBOOK</strong></h3>\r\n</div>\r\n</div>\r\n\r\n<div class=\"col col-md-4\">\r\n<div class=\"content\">\r\n<h3 style=\"text-align:center\"><img alt=\"WHATSAPP\" src=\"http://delagro.com.ar/archivos/image/6665be8.png\" style=\"width:20%\" /></h3>\r\n\r\n<h3 style=\"text-align:center\">CONTACTANOS V&Iacute;A WHATSAPP<br />\r\n<strong>A NUESTROS CELULARES</strong></h3>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<p>&nbsp;</p>\r\n', 'FOOTER BOX'),
 (5, '<h3>&iquest;Quer&eacute;s Recibir tu cup&oacute;n de descuento?</h3>\r\n\r\n<p>&iexcl;Si quer&eacute;s recibir tu cup&oacute;n envianos en el cuerpo del mensaje CUP&Oacute;N DE DESCUENTO y cantidad de metros a comprar, luego te enviaremos el CUP&Oacute;N!</p>\r\n\r\n<p>&nbsp;</p>\r\n', 'OFERTAS ESPECIALES CONTACTO'),
 (6, '<p>&iexcl;Muchas gracias!<br />\r\n<strong>Agromade</strong><br />\r\n356 469-6748 &nbsp;<br />\r\nLun - Viernes: 9:00 - 18:00 &nbsp;<br />\r\nventas@agro-made.com.ar</p>\r\n', 'PIE CORREOS'),
@@ -103,7 +110,7 @@ CREATE TABLE `galerias` (
 CREATE TABLE `imagenes` (
   `id` int(11) NOT NULL,
   `ruta` varchar(255) NOT NULL,
-  `codigo` varchar(255) NOT NULL
+  `cod` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -122,6 +129,13 @@ CREATE TABLE `novedades` (
   `description` text,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `novedades`
+--
+
+INSERT INTO `novedades` (`id`, `cod`, `titulo`, `desarrollo`, `categoria`, `keywords`, `description`, `fecha`) VALUES
+(1, 'b407def216', 'a', '<p>asf</p>\r\n', '', '', '                            ', '2018-11-22');
 
 -- --------------------------------------------------------
 
@@ -365,7 +379,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `contenidos`
@@ -383,13 +397,13 @@ ALTER TABLE `galerias`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `novedades`
 --
 ALTER TABLE `novedades`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`

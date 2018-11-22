@@ -13,7 +13,7 @@ $categorias = new Clases\Categorias();
 $data = $categorias->list(array("area = 'novedades'"));
 
 $imagenes->set("cod", $novedad["cod"]);
-$imagenes->set("link", "modificarNovedades");
+$imagenes->set("link", "novedades&accion=modificar");
 
 if ($borrarImg != '') {
     $imagenes->set("id", $borrarImg);
@@ -57,7 +57,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }
@@ -137,7 +137,7 @@ if (isset($_POST["agregar"])) {
         </div>
         <br/>
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" name="agregar" value="Crear Novedad" />
+            <input type="submit" class="btn btn-primary" name="agregar" value="Modificar Novedad" />
         </div>
     </form>
 </div>

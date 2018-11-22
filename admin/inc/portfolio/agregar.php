@@ -42,7 +42,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }
@@ -93,7 +93,7 @@ if (isset($_POST["agregar"])) {
         <div class="clearfix"></div>
         <br/>
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" name="agregar" value="Crear Novedad" />
+            <input type="submit" class="btn btn-primary" name="agregar" value="Agregar" />
         </div>
     </form>
 </div>

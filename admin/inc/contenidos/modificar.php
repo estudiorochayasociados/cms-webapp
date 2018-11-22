@@ -6,7 +6,7 @@ $id = $funciones->antihack_mysqli(isset($_GET['cod']) ? $_GET['cod'] : '');
 $contenidos->set("id", $id);
 $data = $contenidos->view();
 if (isset($_POST["agregar"])) {
-    //$contenidos->set("codigo", $funciones->antihack_mysqli(isset($_POST["codigo"]) ? $_POST["codigo"] : ''));
+    //$contenidos->set("cod", $funciones->antihack_mysqli(isset($_POST["codigo"]) ? $_POST["codigo"] : ''));
     $contenidos->set("contenido", $funciones->antihack_mysqli(isset($_POST["contenido"]) ? $_POST["contenido"] : ''));
     $contenidos->edit();
     $funciones->headerMove(URL . "/index.php?op=contenidos");
@@ -20,7 +20,7 @@ if (isset($_POST["agregar"])) {
     <form method="post">
         <label class="col-lg-12">Título:
             <br/>
-            <input type="text" name="titulo" value="<?=strtoupper($data["codigo"]);?>" readonly />
+            <input type="text" name="titulo" value="<?=strtoupper($data["cod"]);?>" readonly />
         </label>
         <label class="col-lg-12" >Desarrollo:
             <br/>

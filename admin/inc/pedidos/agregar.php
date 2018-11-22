@@ -26,7 +26,7 @@ if (isset($_POST["agregar"])) {
         </label>
         <div class="clearfix"></div>
         <div class="col-md-12">
-            <input type="submit" class="btn btn-primary" name="agregar" value="Subir Video" />
+            <input type="submit" class="btn btn-primary" name="agregar" value="Agregar Pedidos" />
         </div>
     </form>
 </div>

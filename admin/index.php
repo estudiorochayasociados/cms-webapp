@@ -13,14 +13,19 @@ $funciones= new Clases\PublicFunction();
 
 
 if (!isset($_SESSION["admin"])) {
-    $admin->loginForm();
+	$admin->loginForm();
 } else {
-    $op = isset($_GET["op"]) ? $_GET["op"] : 'inicio';
+	$op = isset($_GET["op"]) ? $_GET["op"] : 'inicio';
 	$accion = isset($_GET["accion"]) ? $_GET["accion"] : 'ver';
 	
 	if($op != '') {
-		include "inc/".$op."/".$accion.".php";		
-	} 
+		if($op == "salir") {
+			session_destroy();
+			$funciones->headerMove(URL."/index.php");
+		} else {
+			include "inc/".$op."/".$accion.".php";		
+		}
+	}
 }
 
 $template->themeEnd();

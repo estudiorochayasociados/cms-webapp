@@ -2,7 +2,7 @@
 $contenidos = new Clases\Contenidos();
 
 if (isset($_POST["agregar"])) {
-    $contenidos->set("codigo", $funciones->antihack_mysqli(isset($_POST["codigo"]) ? $_POST["codigo"] : ''));
+    $contenidos->set("cod", $funciones->antihack_mysqli(isset($_POST["codigo"]) ? $_POST["codigo"] : ''));
     $contenidos->set("contenido", $funciones->antihack_mysqli(isset($_POST["contenido"]) ? $_POST["contenido"] : ''));
     $contenidos->add();
     $funciones->headerMove(URL . "/index.php?op=contenidos");

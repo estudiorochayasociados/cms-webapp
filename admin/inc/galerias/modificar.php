@@ -13,7 +13,7 @@ $galerias->set("cod", $cod);
 $galeria = $galerias->view();
 
 $imagenes->set("cod", $galeria["cod"]);
-$imagenes->set("link", "modificarGalerias");
+$imagenes->set("link", "galerias&accion=modificar");
 
 if ($borrarImg != '') {
     $imagenes->set("id", $borrarImg);
@@ -56,7 +56,7 @@ if (isset($_POST["agregar"])) {
                 unlink($destinoFinal);
             }
 
-            $imagenes->set("codigo", $cod);
+            $imagenes->set("cod", $cod);
             $imagenes->set("ruta", str_replace("../", "", $destinoRecortado));
             $imagenes->add();
         }

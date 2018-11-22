@@ -5,7 +5,7 @@ class Contenidos
     //Atributos
     public $id;
     public $contenido;
-    public $codigo;
+    public $cod;
     private $con;
 
     //Metodos
@@ -26,7 +26,7 @@ class Contenidos
     }
     public function add()
     {
-        $sql   = "INSERT INTO `contenidos`(`contenido`, `codigo`) VALUES ('{$this->contenido}','{$this->codigo}')";
+        $sql   = "INSERT INTO `contenidos`(`contenido`, `cod`) VALUES ('{$this->contenido}','{$this->cod}')";
         $query = $this->con->sql($sql);
         return $query;
     }
